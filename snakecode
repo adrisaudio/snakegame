@@ -1,0 +1,34 @@
+//snake code that will be written in c++ (note that this game will not involve classes)
+
+#include <iostream>
+using namespace std;
+
+//declaring the global variables
+bool gameOver;
+//this will serve as the main center for commands
+int main(){// note that this main expects an integer return
+  setup();
+  while(!gameOver){
+    draw();
+    input();
+    logic();
+// note that here you can implement the sleep function to have the game run slightly slower
+    //sleep(10); -- this is not yet made though
+  }
+  return 0;
+}
+
+
+
+// This will mark the start of the functions that we will be calling in 
+// main to set up, draw, and run the game.
+
+void setup(){// set up the game
+gameOver = false;// the game is not over so
+}
+void draw(){// draw the snake
+}
+void input(){// the direction the snake head will go
+}
+void logic(){
+}
