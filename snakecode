@@ -44,16 +44,28 @@ void setup(){  // set up the game
 void draw(){// draw the snake and the board of the game
   system("cls");            // the windows command for clean the screen
   // this section is for setting up the screen that will be displayed
-  for (int i = 0; i < width; i++){ // will print "-" along the top wall
+  for (int i = 0; i < width+2; i++){ // will print "-" along the top wall
     cout<<"-"; 
     cout << endl;
   }
 //prints the middle map section
+  //height
   for (int i = 0; i < height; i++){
+    //width
     for (int j = 0; j < width, j++){
+      if (j==0){// we are checking to see if we are at the first block of a line to make the outer boundary
+        cout << "|";
+      }
+      else if (j== width - 1){// we are checking to see if we are at the first block of a line to make the outer boundary
+        cout << "|";
+      }
+      else{
+        cout << " ";
+      }
+    cout << endl;
     }
   }
-  for (int i = 0; i < width; i++){ // will print "-" along the bottom wall
+  for (int i = 0; i < width+2; i++){ // will print "-" along the bottom wall
     cout<<"-"; 
     cout << endl;
   }
