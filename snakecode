@@ -3,11 +3,19 @@
 #include <iostream>
 using namespace std;
 
-//declaring the global variables
+//GLOBAL VARIABLES
 bool gameOver;
-//this will serve as the main center for commands
+const int width = 20;                         // this is how wide the board is
+const int height = 20;                        // this is the height of the board
+int x, y;                                     // the game is 2D so these are the variables that will be used to establish the plane
+int fruitx, fruity;                           // this is what will hold the cooridinates for the fruit to spawn
+int score;                                    // will display the score of the player (overall option)
+enum sdirection {STOP = 0,LEFT,RIGHT,UP,DOWN} // will control the direction of the snake (enummeration)
+sdirection dir;                               // this is the variable that will actually hold the direction of the snake
+
+//MAIN STARTS HERE
 int main(){// note that this main expects an integer return
-  setup();
+  setup(); // initiates the set up of the game
   while(!gameOver){
     draw();
     input();
@@ -22,11 +30,36 @@ int main(){// note that this main expects an integer return
 
 // This will mark the start of the functions that we will be calling in 
 // main to set up, draw, and run the game.
+//FUNCTIONS START HERE
 
-void setup(){// set up the game
-gameOver = false;// the game is not over so
+void setup(){  // set up the game
+  gameOver = false;           // the game is not over so
+  dir = STOP;                 // the snake is not moving at the start
+  x = width/2;                // the head is in the middle horizontally
+  y = height/2;               // the head is in the middle vertically
+  fruitx = rand() % width;    // will generate a random value between 0 and 19 for the x val of the fruit
+  fruity = rand() % height;   // will generate a random value between 0 and 19 for the y val of the fruit
+  score = 0;                  // score is initialized at 0
 }
-void draw(){// draw the snake
+void draw(){// draw the snake and the board of the game
+  system("cls");            // the windows command for clean the screen
+  // this section is for setting up the screen that will be displayed
+  for (int i = 0; i < width; i++){ // will print "-" along the top wall
+    cout<<"-"; 
+    cout << endl;
+  }
+//prints the middle map section
+  for (int i = 0; i < height; i++){
+    for (int j = 0; j < width, j++){
+    }
+  }
+  for (int i = 0; i < width; i++){ // will print "-" along the bottom wall
+    cout<<"-"; 
+    cout << endl;
+  }
+
+
+
 }
 void input(){// the direction the snake head will go
 }
